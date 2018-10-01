@@ -1,0 +1,5 @@
+
+connect --locator=localhost[10334]
+
+create region --name=test --if-not-exists --eviction-action=local-destroy --region-idle-time-expiration=500 --region-idle-time-expiration-action=DESTROY --enable-statistics=true --type=LOCAL_HEAP_LRU
+
