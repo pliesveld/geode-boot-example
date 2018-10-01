@@ -15,19 +15,42 @@ configurations {
         all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
         all*.exclude group: 'org.springframework.boot', module: 'logback-classic'
         all*.exclude group: 'org.springframework.boot', module: 'logback-core'
+
+        all*.exclude group: 'org.hibernate.validator', module: 'hibernate-validator'
+        all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-json'
+        all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-web'
+        all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-webmvc'
     }
 }
 
 dependencies {
+    compile 'org.springframework:spring-context-indexer'
     compile('org.springframework.boot:spring-boot-starter-log4j2')
-    compile('org.springframework.boot:spring-boot-starter-aop')
-    compile('org.springframework.boot:spring-boot-starter-web')
+//    compile('org.springframework.boot:spring-boot-starter-aop')
+//    compile('org.springframework.boot:spring-boot-starter-web')
+//    compile('org.springframework.boot:spring-boot-starter-webmvc')
     compile("org.springframework.boot:spring-boot-devtools")
+    compile('org.projectlombok:lombok')
 
-	compile 'org.slf4j:slf4j-api:1.7.21'
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-    testCompile group: 'javax.inject', name: 'javax.inject', version: '1'
-	testCompile 'junit:junit:4.12'
-    testCompile 'pl.pragmatists:JUnitParams:1.1.0'
+    compile group: 'javax.cache', name: 'cache-api', version: '1.1.0'
+    compile group: 'org.apache.geode', name: 'apache-geode', version: '1.6.0'
+    compile group: 'org.apache.geode', name: 'geode-core', version: '1.6.0'
+    compile group: 'org.apache.geode', name: 'geode-common', version: '1.6.0'
+
+    compile group: 'org.apache.geode', name: 'geode-modules', version: '1.2.1'
+
+//    compile group: 'org.springframework.data', name: 'spring-data-geode', version: '2.0.10.RELEASE'
+    compile group: 'org.springframework.data', name: 'spring-data-gemfire', version: '2.1.0.RELEASE'
+    compile group: 'org.springframework.shell', name: 'spring-shell', version: '1.2.0.RELEASE'
+
+    compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+
+
+//	compile 'org.slf4j:slf4j-api:1.7.21'
+//	testCompile('org.springframework.boot:spring-boot-starter-test')
+//    testCompile group: 'org.apache.geode', name: 'geode-common', version: '1.6.0'
+//	testCompile group: 'javax.inject', name: 'javax.inject', version: '1'
+//	testCompile 'junit:junit:4.12'
+//    testCompile 'pl.pragmatists:JUnitParams:1.1.0'
 }
 

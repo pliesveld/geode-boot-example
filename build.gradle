@@ -4,8 +4,8 @@ buildscript {
     }
     repositories {
         mavenCentral()
-        maven{ url 'http://repo.springsource.org/libs-release/' }
-        maven{ url 'http://repo.springsource.org/libs-milestone/' }
+        maven{ url 'https://repo.spring.io/libs-release' }
+        maven{ url 'https://repo.spring.io/libs-milestone' }
         maven{ url 'https://repo.spring.io/libs-snapshot' }
     }
     dependencies {
@@ -24,6 +24,13 @@ allprojects {
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'application'
     mainClassName = 'hello.Application'
+
+    repositories {
+        mavenCentral()
+        maven{ url 'https://repo.spring.io/libs-release' }
+        maven{ url 'https://repo.spring.io/libs-milestone' }
+        maven{ url 'https://repo.spring.io/libs-snapshot' }
+    }
 }
 
 subprojects {
@@ -37,13 +44,6 @@ subprojects {
     checkstyle {
         sourceSets = Collections.singletonList(sourceSets.main)
         configFile = rootProject.file('config/checkstyle/checkstyle.xml')
-    }
-
-    repositories {
-        mavenCentral()
-        maven{ url { 'http://repo.springsource.org/libs-release/' }}
-        maven{ url { 'http://repo.springsource.org/libs-milestone/' }}
-        maven{ url { 'http://repo.springsource.org/libs-snapshot/' }}
     }
 }
 
