@@ -1,10 +1,12 @@
 buildscript {
     ext {
-        springBootVersion = '2.0.0.BUILD-SNAPSHOT'
+        springBootVersion = '2.0.5.RELEASE'
     }
     repositories {
         mavenCentral()
-        maven { url 'https://repo.spring.io/libs-snapshot' }
+        maven{ url 'http://repo.springsource.org/libs-release/' }
+        maven{ url 'http://repo.springsource.org/libs-milestone/' }
+        maven{ url 'https://repo.spring.io/libs-snapshot' }
     }
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
